@@ -32,4 +32,7 @@ def is_anagram(first_string, second_string):
 
     if first_string == '' or second_string == '':
         return (''.join(string_one), ''.join(string_two), False)
-    return (''.join(string_one), ''.join(string_two), ''.join(string_one) == ''.join(string_two))
+    return (
+        ''.join(string_one),
+        ''.join(string_two),
+        ''.join(string_one) == ''.join(string_two))
