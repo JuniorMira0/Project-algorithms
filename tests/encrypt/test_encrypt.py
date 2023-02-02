@@ -1,5 +1,11 @@
-# from challenges.challenge_encrypt_message import encrypt_message
-
+from challenges.challenge_encrypt_message import encrypt_message
+import pytest
 
 def test_encrypt_message():
-    pass
+    with pytest.raises(TypeError, match="tipo inválido para key"):
+        encrypt_message("xablau", "xablau")
+    with pytest.raises(TypeError, match="tipo inválido para message"):
+        encrypt_message(1, 1)
+    assert encrypt_message("xablau", 9) == "ualbax"
+    assert encrypt_message("xablau", 2) == "ualb_ax"
+    assert encrypt_message("XABLAU", 4) == "UA_LBAX"
